@@ -1,0 +1,59 @@
+
+<div style="text-align:center">
+  <h1>
+    My Profile
+  </h1>
+ </div>
+ <div style="margin:20px 50px 20px 50px;">
+<form #profileform="ngForm" (ngSubmit)="onSubmit(profileform)" enctype="multipart/form-data">
+    
+  <div class="form-group" *ngIf="userDetails">
+    <label for="Food">Full Name</label>
+    <input type="text" name="fullname" #fullname="ngModel" ngModel [(ngModel)]="userDetails.fullName" class="form-control" id="inputdefault" placeholder="Full Name" readonly>
+  </div>
+  <div class="form-group" *ngIf="userDetails">
+    <label for="Food">Email</label>
+    <input type="text" name="email" #email="ngModel" ngModel [(ngModel)]="userDetails.email" class="form-control" id="inputdefault" placeholder="Email" readonly>
+  </div>
+  <div class="form-group" *ngIf="userDetails">
+    <label for="Food">Phone</label>
+    <input type="text" name="phone" #phone="ngModel" ngModel [(ngModel)]="userDetails.phone" class="form-control" id="inputdefault" placeholder="Phone" readonly>
+  </div>
+ 
+
+  <div class="form-group">
+    <label for="Food">Update Picture</label>
+    <input type="file" name="picture"   class="form-control" id="inputdefault" (change)="onfileselect($event)" />
+  </div>
+  <div class="form-group">
+    <label for="Food">QualiFication</label>
+  		<select  name="qualification" ngModel  class="form-control"> 
+        <option value="BCA">BCA</option>
+        <option value="MCA">MCA</option>
+        <option value="B.TECH">B.TECH</option>
+        <option value="M.TECH">M.TECH</option>
+			</select>
+		</div>
+    <div class="form-group">
+      <label for="Food">Specialization</label>
+      <input type="text" name="specialization"  ngModel  class="form-control" id="inputdefault" placeholder="Specialization">
+    </div>
+    <div class="form-group">
+      <label for="experience">Experience</label>
+      <select  name="experience" ngModel class="form-control"> 
+				<option [selected] [value]="0">Fresher</option>  
+        <option [value]="1">1</option>
+        <option [value]="2">2</option>
+        <option [value]="3">2</option>
+        <option [value]="4">4</option>
+			</select>
+    </div>
+    <div class="form-group">
+      <label for="Food">Project Description(One)</label>
+      <input type="text" name="prodesc" ngModel  class="form-control" id="inputdefault" placeholder="Project Description">
+    </div>
+  <div class="form-group">
+    <input type="submit" class="form-control btn btn-success" id="inputdefault">
+  </div>
+</form>
+</div>

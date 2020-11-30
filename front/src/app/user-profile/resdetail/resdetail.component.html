@@ -1,0 +1,23 @@
+<div class="viewcat" style="margin:30px 60px 30px 60px; background-color: cornsilk; max-height: 300vh;">
+  <div class="container">
+    <h2>View Result Subject Wise</h2>            
+    <table class="table table-hover">
+  
+        <tr>
+          <th>Sl No.</th>
+          <th>Student Email</th>
+          <th>Marks</th>
+          <!-- <th>View Profile</th> -->
+        </tr>
+      
+        <tr *ngFor="let res of results;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{res._id}}</td>
+          <td>{{res.marks}}</td>
+          <!-- <td><button class="btn btn-success" (click)="viewprofile(res._id)">View Profile</button></td> -->
+          
+        </tr>
+        
+    </table>
+  </div>
+  </div> 
